@@ -24,7 +24,7 @@ public class Drivetrain extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
     private WPI_TalonSRX m_leftFrontMotor = new WPI_TalonSRX(Robot.getConstants().getCAN("drivetrain_leftFront"));
     private WPI_VictorSPX m_leftBackMotor = new WPI_VictorSPX(Robot.getConstants().getCAN("drivetrain_leftBack"));
-    public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(drivetrain_leftFront, drivetrain_leftBack);
+    public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(m_leftBackMotor,m_leftBackMotor);
 
     private WPI_TalonSRX m_rightFrontMotor = new WPI_TalonSRX(Robot.getConstants().getCAN("drivetrain_rigthBack"));
     private WPI_VictorSPX m_rightBackMotor = new WPI_VictorSPX(Robot.getConstants().getCAN("drivetrain_rightBack"));
@@ -32,6 +32,7 @@ public class Drivetrain extends SubsystemBase {
 
     public DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
   public Drivetrain() {}
+
 
   @Override
   public void periodic() {
