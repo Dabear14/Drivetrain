@@ -24,11 +24,11 @@ public class Drivetrain extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
     private WPI_TalonSRX m_leftFrontMotor = new WPI_TalonSRX(Robot.getConstants().getCAN("drive_lf"));
     private WPI_VictorSPX m_leftBackMotor = new WPI_VictorSPX(Robot.getConstants().getCAN("drive_lb"));
-    public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(leftFront, leftBack);
+    public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(drivetrain_leftFront, drivetrain_leftBack);
 
     private WPI_TalonSRX m_rightFrontMotor = new WPI_TalonSRX(Robot.getConstants().getCAN("drive_rf"));
     private WPI_VictorSPX m_rightBackMotor = new WPI_VictorSPX(Robot.getConstants().getCAN("drive_rb"));
-    public SpeedControllerGroup m_rightMotors = new SpeedControllerGroup(m_rightFrontMotor, m_rightBackMotor);
+    public SpeedControllerGroup m_rightMotors = new SpeedControllerGroup(drivetrain_rightFront, drivetrain_rightBack);
 
     public DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
   public Drivetrain() {}
