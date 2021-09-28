@@ -17,17 +17,18 @@ import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 import frc.robot.Robot;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-    private WPI_TalonSRX m_leftFrontMotor = new WPI_TalonSRX(Robot.getConstants().getCAN("drivetrain_leftFront"));
-    private WPI_VictorSPX m_leftBackMotor = new WPI_VictorSPX(Robot.getConstants().getCAN("drivetrain_leftBack"));
-    public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(m_leftBackMotor,m_leftBackMotor);
+    private WPI_TalonSRX m_leftFrontMotor = new WPI_TalonSRX(Constants.drivetrain_leftFront);
+    private WPI_VictorSPX m_leftBackMotor = new WPI_VictorSPX(Constants.drivetrain_leftBack);
+    public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(m_leftFrontMotor,m_leftBackMotor);
 
-    private WPI_TalonSRX m_rightFrontMotor = new WPI_TalonSRX(Robot.getConstants().getCAN("drivetrain_rigthBack"));
-    private WPI_VictorSPX m_rightBackMotor = new WPI_VictorSPX(Robot.getConstants().getCAN("drivetrain_rightBack"));
+    private WPI_TalonSRX m_rightFrontMotor = new WPI_TalonSRX(Constants.drivetrain_rightFront);
+    private WPI_VictorSPX m_rightBackMotor = new WPI_VictorSPX(Constants.drivetrain_rightBack);
     public SpeedControllerGroup m_rightMotors = new SpeedControllerGroup(m_rightFrontMotor, m_rightBackMotor);
 
     public DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
