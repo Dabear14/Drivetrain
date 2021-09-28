@@ -13,8 +13,8 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
-    int leftFront=24;
-    int leftBack=13;
-    int rightFront=23;
-    int rightBack=15;
+    public static final int drivetrain_leftFront = 24;
+    public static final int drivetrain_leftBack = 13;
+    public static final int drivetrain_rightFront = 23;
+    public static final int drivetrain_rightBack = 15;
 }
