@@ -23,27 +23,17 @@ import frc.robot.Robot;
 
 public class Drivetrain extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-    private WPI_TalonSRX m_leftFrontMotor = new WPI_TalonSRX(Constants.drivetrain_leftFront);
-    private WPI_VictorSPX m_leftBackMotor = new WPI_VictorSPX(Constants.drivetrain_leftBack);
+    private WPI_TalonSRX m_leftFrontMotor = new WPI_TalonSRX(Constants.CAN.drive_lf);
+    private WPI_VictorSPX m_leftBackMotor = new WPI_VictorSPX(Constants.CAN.drive_lb);
     public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(m_leftFrontMotor,m_leftBackMotor);
 
-    private WPI_TalonSRX m_rightFrontMotor = new WPI_TalonSRX(Constants.drivetrain_rightFront);
-    private WPI_VictorSPX m_rightBackMotor = new WPI_VictorSPX(Constants.drivetrain_rightBack);
+    private WPI_TalonSRX m_rightFrontMotor = new WPI_TalonSRX(Constants.CAN.drive_rf);
+    private WPI_VictorSPX m_rightBackMotor = new WPI_VictorSPX(Constants.CAN.drive_rb);
     public SpeedControllerGroup m_rightMotors = new SpeedControllerGroup(m_rightFrontMotor, m_rightBackMotor);
 
     public DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
   public Drivetrain() {}
 
-
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-  }
-
-  @Override
-  public void simulationPeriodic() {
-    // This method will be called once per scheduler run during simulation
-  }
   public void arcadeDrive(double xSpeed, double zRotation){
     m_drive.arcadeDrive(xSpeed, zRotation);
   }

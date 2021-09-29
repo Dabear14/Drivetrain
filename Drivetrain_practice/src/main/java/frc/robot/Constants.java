@@ -17,4 +17,11 @@ public final class Constants {
     public static final int drivetrain_leftBack = 13;
     public static final int drivetrain_rightFront = 23;
     public static final int drivetrain_rightBack = 15;
+    
+    public final class CAN {
+        public static final int drive_lf = 24;
+        public static final int drive_lb = 13;
+        public static final int drive_rf = 23;
+        public static final int drive_rb = 15;
+    }
 }
