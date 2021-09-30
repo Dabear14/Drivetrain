@@ -23,8 +23,8 @@ import frc.robot.Robot;
 
 public class Drivetrain extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-    private WPI_TalonSRX m_leftFrontMotor = new WPI_TalonSRX(Constants.CAN.drive_lf);
-    private WPI_VictorSPX m_leftBackMotor = new WPI_VictorSPX(Constants.CAN.drive_lb);
+    private  WPI_VictorSPX m_leftFrontMotor = new WPI_VictorSPX (Constants.CAN.drive_lf);
+    private WPI_TalonSRX  m_leftBackMotor = new WPI_TalonSRX(Constants.CAN.drive_lb);
     public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(m_leftFrontMotor,m_leftBackMotor);
 
     private WPI_TalonSRX m_rightFrontMotor = new WPI_TalonSRX(Constants.CAN.drive_rf);
