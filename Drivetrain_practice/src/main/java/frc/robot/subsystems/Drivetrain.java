@@ -27,8 +27,8 @@ public class Drivetrain extends SubsystemBase {
     private WPI_TalonSRX  m_leftBackMotor = new WPI_TalonSRX(Constants.CAN.drive_lb);
     public SpeedControllerGroup m_leftMotors = new SpeedControllerGroup(m_leftFrontMotor,m_leftBackMotor);
 
-    private WPI_TalonSRX m_rightFrontMotor = new WPI_TalonSRX(Constants.CAN.drive_rf);
-    private WPI_VictorSPX m_rightBackMotor = new WPI_VictorSPX(Constants.CAN.drive_rb);
+    private WPI_VictorSPX  m_rightFrontMotor = new WPI_VictorSPX(Constants.CAN.drive_rf);
+    private WPI_TalonSRX m_rightBackMotor = new WPI_TalonSRX (Constants.CAN.drive_rb);
     public SpeedControllerGroup m_rightMotors = new SpeedControllerGroup(m_rightFrontMotor, m_rightBackMotor);
 
     public DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
